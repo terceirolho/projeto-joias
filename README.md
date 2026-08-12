@@ -143,7 +143,7 @@ Caso o seu conjunto de dados apresente uma disparidade muito grande na quantidad
 
 ## Trabalhos Futuros
  
-- Classificação multirrótulo de design
+- Classificação multirrótulo de design e treinar a partir do dataset somente com imagens still (produto em fundo branco)
 - Dataset dedicado de pedra
 - Ampliar dados das classes raras por coleta dirigida
 - Testar EfficientNet, ResNet, Vision Transformer e CLIP
@@ -162,8 +162,8 @@ Caso o seu conjunto de dados apresente uma disparidade muito grande na quantidad
 
 ```text
 ├── data/
-│   ├── train_4096.pkl          # Features extraídas das imagens de treino (VGG16)
-│   └── val_4096.pkl            # Features extraídas das imagens de validação (VGG16)
+│   ├── train_4096.pk1          # Features extraídas das imagens de treino (VGG16)
+│   └── val_4096.pk1            # Features extraídas das imagens de validação (VGG16)
 │
 ├── datasets/
 │   ├── captions.txt            # Mapeamento global: imagem ──> legenda/classe
@@ -221,9 +221,9 @@ Executa o fluxo completo de aprendizado da rede:
 Avalia rigorosamente o desempenho do modelo no conjunto de testes (`test/`):
 1. Faz a inferência de novas imagens usando o método autoregressivo `generate_caption()`.
 2. Avalia a exatidão através da métrica **CCR (Correct Classification Rate)** para verificar se a legenda gerada é 100% idêntica à esperada.
-3. Mede a acurácia isolada por subcategoria (anel, brinco, colar).
+3. Mede a acurácia isolada por categorias (anel, brinco, colar) cor (dourado, prata e dourado e prata), design (organico, escultural, minimalista, figurativo, geométrico, maximalista, letter).
 4. Plota matrizes de confusão e calcula métricas clássicas de classificação: Precisão, Recall e F1-Score.
-5. Calcula a métrica **BLEU**, padrão internacional para avaliar a qualidade de textos gerados. **Apenas para a TAREFA 3 [GERAR LEGENDAS]
+5. Calcula a métrica **BLEU**, padrão internacional para avaliar a qualidade de textos gerados. **Apenas para a TAREFA 4 [GERAR LEGENDAS]
 6. Consolida e exporta todos os relatórios estruturados em arquivos CSV dentro de `models/test_logs/` em especial o test da tarefa de gerar legendas.
 
 
