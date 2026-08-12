@@ -20,7 +20,7 @@ Dataset [CATEGORIA] → Dataset [COR] → Dataset [DESIGN] → Dataset [LEGENDA 
 ```
 Brinco dourado com design orgânico.
 Colar prata com design escultural e com pérola.
-Anel dourado com design minimalista.
+Anel dourado com design figurativo.
 ```
  
 ---
@@ -34,7 +34,7 @@ flowchart TD
     A["Pré-processamento\nNormalização · Splits · Captions"] --> B["dataFunctions.py\nVocabulário e Tokenização"]
     B --> D["modelFunctions.py\nVGG16 + GRU"]
     C["config.py"] --> D
-    D --> E["train.py\nTransfer Learning em Cascata\nDataset [CATEGORIA] → Dataset [COR] → Dataset [DESIGN] → Dataset [GERAR LEGENDAS]"]
+    D --> E["train.py\nTransfer Learning em Cascata\nDataset [CATEGORIA] → Dataset [COR] → Dataset [DESIGN] → Dataset [LEGENDA]"]
     E --> F["Modelos salvos\n.hdf5 · .pk1"]
     F --> G["test.py\nInferência e Avaliação"]
     G --> H["Métricas\nAcurácia · F1 · CCR · BLEU"]
