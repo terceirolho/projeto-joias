@@ -218,7 +218,7 @@ Executa o fluxo completo de aprendizado da rede:
 6. Entrega o modelo final treinado no formato `.hdf5` e os tokenizadores correspondentes.
 
 ### 🧪 `test.py`
-Avalia rigorosamente o desempenho do modelo no conjunto de testes (`test/`):
+Avalia  o desempenho do modelo no conjunto de testes (`test/`):
 1. Faz a inferência de novas imagens usando o método autoregressivo `generate_caption()`.
 2. Avalia a exatidão através da métrica **CCR (Correct Classification Rate)** para verificar se a legenda gerada é 100% idêntica à esperada.
 3. Mede a acurácia isolada por categorias (anel, brinco, colar) cor (dourado, prata e dourado e prata), design (organico, escultural, minimalista, figurativo, geométrico, maximalista, letter).
@@ -233,7 +233,7 @@ Avalia rigorosamente o desempenho do modelo no conjunto de testes (`test/`):
 
 ```bash
 source /home/letgonc/jewelry_env/bin/activate
-cd /home/letgonc/projetos/jewelry_com_Bertimbau_exp4
+cd /home/letgonc/projetos/jewelry 
 pip install -r requirements.txt
 ```
 
