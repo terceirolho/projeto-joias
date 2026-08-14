@@ -230,4 +230,61 @@ Avalia rigorosamente o desempenho do modelo no conjunto de testes (`test/`):
 
 
 ## Como Usar
- 
+
+```bash
+source /home/letgonc/jewelry_env/bin/activate
+cd /home/letgonc/projetos/jewelry_com_Bertimbau_exp4
+pip install -r requirements.txt
+```
+
+### 1. Preparar seu dataset
+
+Adicione o arquivo `SEU_DATASET.csv` na raiz do projeto.  
+*(Não incluído no repositório por conter dados proprietários.)*
+
+### 2. Treinamento dos modelos
+
+```bash
+# Dataset CATEGORIA (do zero)
+python src/train.py \
+  --train_path datasets/generico \
+  --cnn vgg16 --rnn gru \
+  --use_embedding false \
+  --epochs 50 --neurons 256 --batch_size 32 \
+  --use_class_weights true
+
+# Dataset COR (transfer do CATEGORIA)
+python src/train.py \
+  --train_path datasets/normal \
+  --use_class_weights true \
+  --pretrained_model models/model_generico_vgg16_gru_False_50_256_32.hdf5
+
+# Dataset DESIGN (transfer do COR)
+python src/train.py \
+  --train_path datasets/design \
+  --use_class_weights true \
+  --pretrained_model models/model_normal_vgg16_gru_False_50_256_32.hdf5
+
+# Dataset LEGENDA ESTRUTURADA (transfer do DESIGN)
+python src/train.py \
+  --train_path datasets/completo-2 \
+  --use_class_weights true \
+  --pretrained_model models/model_design_vgg16_gru_False_50_256_32.hdf5
+```
+
+### 3. Avaliar os modelos
+
+```bash
+python src/test.py \
+  --model models/model_DATASET_vgg16_gru_False_50_256_32.hdf5 \
+  --test_path datasets/DATASET
+```
+
+### 4. Interface
+
+A interface está disponível em:  
+🔗 [https://letgonc-joias.hf.space](https://letgonc-joias.hf.space)
+
+> O código da interface (`app.py`) não está incluído neste repositório.  
+> Para executar localmente, acesse o repositório do Hugging Face Space:  
+> [https://huggingface.co/spaces/letgonc/joias](https://huggingface.co/spaces/letgonc/joias)
