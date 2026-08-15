@@ -241,6 +241,7 @@ pip install -r requirements.txt
 
 Adicione o arquivo `SEU_DATASET.csv` na raiz do projeto.  
 *Espero que seu dataset esteja organizado e perfeito. Caso contrário, forças e boa sorte!
+
 *(Não incluído no repositório por conter dados proprietários.)*
 
 ### 2. Treinamento dos modelos
