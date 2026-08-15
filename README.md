@@ -232,14 +232,15 @@ Avalia  o desempenho do modelo no conjunto de testes (`test/`):
 ## Como Usar
 
 ```bash
-source /home/letgonc/jewelry_env/bin/activate
-cd /home/letgonc/projetos/jewelry 
+source /home/seu-ambiente/jewelry_env/bin/activate
+cd /home/seu-ambiente/projetos/jewelry 
 pip install -r requirements.txt
 ```
 
 ### 1. Preparar seu dataset
 
 Adicione o arquivo `SEU_DATASET.csv` na raiz do projeto.  
+*Espero que seu dataset esteja organizado e perfeito. Caso contrário, forças e boa sorte!
 *(Não incluído no repositório por conter dados proprietários.)*
 
 ### 2. Treinamento dos modelos
