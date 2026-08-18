@@ -231,9 +231,11 @@ Avalia  o desempenho do modelo no conjunto de testes (`test/`):
 
 ## Como Usar
 
-```bash
-source /home/seu-ambiente/jewelry_env/bin/activate
-cd /home/seu-ambiente/projetos/jewelry 
+# Criar ambiente virtual
+python3 -m venv jewelry_env
+source jewelry_env/bin/activate
+
+# Instalar dependências
 pip install -r requirements.txt
 ```
 
