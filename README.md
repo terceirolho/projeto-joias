@@ -292,3 +292,4 @@ A interface está disponível em:
 > O código da interface (`app.py`) não está incluído neste repositório.  
 > Para executar localmente, acesse o repositório do Hugging Face Space:  
 > [https://huggingface.co/spaces/letgonc/joias](https://huggingface.co/spaces/letgonc/joias)
+> Acesso interface: https://letgonc-joias.hf.space
